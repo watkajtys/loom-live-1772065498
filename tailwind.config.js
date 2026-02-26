@@ -26,11 +26,18 @@ export default {
         "primary-dark": "#F57C00",
         "background-dark": "#1F150A",
         "solar-deep": "#2D1B0E",
+        "midnight": "#05070A",
+        "charcoal": "#1A1D21",
+        "charcoal-light": "#2C3036",
+        "horizon-top": "#05070A",
+        "horizon-bottom": "#0F1216",
       },
       fontFamily: {
         sans: ['"DM Sans"', 'sans-serif'],
         display: ['"DM Sans"', 'sans-serif'], // Mapping display to DM Sans as per prompt
         numeric: ['"Outfit"', 'sans-serif'],
+        serif: ['"Playfair Display"', 'serif'],
+        inter: ['"Inter"', 'sans-serif'],
       },
       backdropBlur: {
         xl: '24px',
