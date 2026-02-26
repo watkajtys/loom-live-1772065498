@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Nightstand - Obsidian Vault</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&amp;family=Cinzel:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "obsidian": "#000000",
+                        "parchment": "#D4C5A1",
+                        "parchment-dim": "#8A7E64", 
+                        "gold-glow": "#F5E6C4",
+                    },
+                    fontFamily: {
+                        "display": ["Cinzel", "serif"],
+                        "serif": ["Cormorant Garamond", "serif"],
+                    },
+                    backgroundImage: {
+                        'vault-gradient': 'linear-gradient(to bottom, #000000 0%, #050505 100%)',
+                    },
+                    letterSpacing: {
+                        'widest-plus': '0.3em',
+                    }
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        :root {
+            --obsidian: #000000;
+            --parchment: #D4C5A1;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .liquid-input {
+            background: transparent;
+            outline: none;
+            border: none;
+            box-shadow: none;
+            text-shadow: 0 0 15px rgba(212, 197, 161, 0.1);
+        }
+        .liquid-input::placeholder {
+            color: rgba(212, 197, 161, 0.15);
+            font-style: italic;
+            font-weight: 300;
+        }.vault-border {
+            border: 1px solid rgba(212, 197, 161, 0.1);
+            box-shadow: inset 0 0 20px rgba(0,0,0,0.8);
+        }
+    </style>
+</head>
+<body class="bg-obsidian text-parchment min-h-screen flex flex-col font-serif antialiased overflow-hidden selection:bg-parchment selection:text-obsidian">
+<header class="fixed top-0 left-0 w-full z-50 p-8 flex justify-between items-center opacity-60 hover:opacity-100 transition-opacity duration-700">
+<div class="flex items-center gap-3 cursor-pointer group">
+<span class="material-symbols-outlined text-sm text-parchment group-hover:text-gold-glow transition-colors duration-500">lock</span>
+<span class="text-[10px] font-display font-medium tracking-widest-plus uppercase text-parchment group-hover:text-gold-glow transition-colors duration-500 border-b border-transparent group-hover:border-parchment/30 pb-0.5">Nightstand Vault</span>
+</div>
+<div class="cursor-pointer group">
+<span class="material-symbols-outlined text-xl text-parchment group-hover:text-gold-glow transition-colors duration-500">grid_view</span>
+</div>
+</header>
+<main class="relative flex flex-col w-full h-screen">
+<section class="relative z-10 flex-1 flex flex-col items-center justify-end pb-16 w-full bg-obsidian border-b border-parchment/5">
+<div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-parchment/5 via-transparent to-transparent opacity-20 z-0 pointer-events-none"></div>
+<div class="relative z-10 text-center px-6 max-w-4xl mx-auto space-y-4">
+<h1 class="text-4xl md:text-5xl lg:text-7xl font-serif font-light text-parchment tracking-tight leading-none opacity-90 drop-shadow-[0_0_15px_rgba(212,197,161,0.1)]">
+                    What must be stored away?
+                </h1>
+<div class="w-16 h-[1px] bg-parchment/20 mx-auto"></div>
+<p class="text-parchment-dim font-display text-xs tracking-[0.2em] uppercase opacity-70">
+                    Secure your thoughts in the dark
+                </p>
+</div>
+</section>
+<div class="w-full h-32 -my-16 z-20 pointer-events-none bg-gradient-to-b from-obsidian via-obsidian/90 to-transparent"></div>
+<section class="relative z-0 flex-[1.5] w-full bg-obsidian flex flex-col items-center pt-12">
+<div class="absolute top-10 left-1/2 -translate-x-1/2 w-1/2 h-40 bg-parchment/5 blur-[100px] rounded-full pointer-events-none"></div>
+<div class="w-full max-w-2xl px-8 md:px-16 h-full pb-24 relative border-x border-parchment/5 bg-obsidian/50 backdrop-blur-sm">
+<textarea autofocus="" class="liquid-input w-full h-full text-2xl md:text-3xl lg:text-5xl font-serif font-light text-parchment placeholder:text-parchment/10 resize-none text-center leading-relaxed caret-parchment focus:ring-0 p-8 m-0 no-scrollbar bg-transparent" placeholder="Inscribe here..." spellcheck="false"></textarea>
+<div class="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-t from-obsidian via-obsidian/80 to-transparent pointer-events-none"></div>
+</div>
+<div class="absolute bottom-10 text-center w-full opacity-30 hover:opacity-60 transition-opacity duration-700 pointer-events-none">
+<div class="flex flex-col items-center gap-2">
+<span class="material-symbols-outlined text-lg text-parchment animate-pulse">keyboard_arrow_down</span>
+<div class="text-[9px] font-display uppercase tracking-[0.4em] font-light text-parchment">
+                        Press <span class="font-normal text-gold-glow border-b border-parchment/30">Enter</span> to Lock
+                    </div>
+</div>
+</div>
+</section>
+</main>
+<div class="fixed inset-0 pointer-events-none opacity-[0.07] z-[60] mix-blend-overlay" style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.8%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E');"></div>
+<div class="fixed top-0 left-0 w-32 h-32 border-l border-t border-parchment/10 pointer-events-none z-40"></div>
+<div class="fixed top-0 right-0 w-32 h-32 border-r border-t border-parchment/10 pointer-events-none z-40"></div>
+<div class="fixed bottom-0 left-0 w-32 h-32 border-l border-b border-parchment/10 pointer-events-none z-40"></div>
+<div class="fixed bottom-0 right-0 w-32 h-32 border-r border-b border-parchment/10 pointer-events-none z-40"></div>
+
+</body></html>

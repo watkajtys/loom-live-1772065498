@@ -1,217 +1,97 @@
 <!DOCTYPE html>
-<html lang="en"><head>
+<html class="dark" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>LofiLoom Arctic Light Theme Variant 2</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<title>Nightstand - Forest Silence</title>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100..800&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
             theme: {
                 extend: {
                     colors: {
-                        "ice-blue": "#E0F7FA",
-                        "frost-white": "#F0F8FF",
-                        "electric-blue": "#00B0FF",
-                        "silver-accent": "#B0BEC5",
-                        "text-primary": "#263238",
-                        "text-secondary": "#546E7A",
-                        "background-light": "#E3F2FD",
+                        "forest-dark": "#0A0F0D", 
+                        "forest-deep": "#0e1411",
+                        "forest-light": "#131c17", 
+                        "moss-grey": "#8a9a8f",
+                        "moss-light": "#b8c4be",
+                        "moss-dim": "#4a5550",
                     },
                     fontFamily: {
-                        "display": ["JetBrains Mono", "monospace"]
+                        "mono": ["'JetBrains Mono'", "monospace"],
                     },
-                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "2xl": "0.75rem", "full": "9999px"},
+                    backgroundImage: {
+                        'forest-gradient': 'linear-gradient(to bottom, #0A0F0D 0%, #0e1411 100%)',
+                    },
                 },
             },
         }
     </script>
-<style>
-        ::-webkit-scrollbar {
-            width: 6px;
-            height: 6px;
+<style type="text/tailwindcss">
+        :root {
+            --forest-base: #0A0F0D;
+            --forest-mid: #0e1411;
         }
-        ::-webkit-scrollbar-track {
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .liquid-input {
             background: transparent;
+            outline: none;
+            border: none;
+            box-shadow: none;
         }
-        ::-webkit-scrollbar-thumb {
-            background: rgba(0, 176, 255, 0.2);
-            border-radius: 3px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: rgba(0, 176, 255, 0.4);
-        }
-        .glass-panel {
-            background: rgba(255, 255, 255, 0.4);
-            backdrop-filter: blur(25px);
-            -webkit-backdrop-filter: blur(25px);
-            border: 1px solid rgba(255, 255, 255, 0.6);
-            box-shadow: 0 8px 32px rgba(176, 190, 197, 0.2);
-        }
-        .glass-panel-deep {
-            background: rgba(255, 255, 255, 0.65);
-            backdrop-filter: blur(45px);
-            -webkit-backdrop-filter: blur(45px);
-            border-top: 1px solid rgba(255, 255, 255, 0.8);
-            box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.05);
-        }
-        input[type=range] {
-            -webkit-appearance: none; 
-            background: transparent; 
-        }
-        input[type=range]::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            height: 14px;
-            width: 14px;
-            border-radius: 0;background: #00B0FF;
-            cursor: pointer;
-            margin-top: -5px; 
-            box-shadow: 0 0 8px rgba(0, 176, 255, 0.5);
-            border: 1px solid #fff;
-        }
-        input[type=range]::-webkit-slider-runnable-track {
-            width: 100%;
-            height: 4px;
-            cursor: pointer;
-            background: rgba(38, 50, 56, 0.1);
-            border-radius: 0;
-        }
-        input[type=range]:focus {
-            outline: none; 
-        }
-        @keyframes pulse-crisp {
-            0%, 100% { box-shadow: 0 0 10px rgba(0, 176, 255, 0.2); }
-            50% { box-shadow: 0 0 20px rgba(0, 176, 255, 0.5); }
-        }
-        .glow-ring {
-            animation: pulse-crisp 4s infinite ease-in-out;
+        .liquid-input::placeholder {
+            color: #4a5550;opacity: 0.5;
         }
     </style>
 </head>
-<body class="font-display bg-background-light text-text-primary h-screen w-screen overflow-hidden relative selection:bg-electric-blue selection:text-white">
-<div class="fixed inset-0 z-0">
-<div class="absolute inset-0 bg-white/30 backdrop-blur-[2px] z-10 pointer-events-none mix-blend-overlay"></div>
-<img alt="Snowy morning scene through window" class="w-full h-full object-cover object-center opacity-90" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGywPj5t7uRG0QAKLphhcBU5PrKvg4HAYb3s6c1jDcFM8Y-B06BvmwBY3T-jH6z9nm8r0BPnwCBTEwL2HEJrWWasSzFXn_rYSu6P4fJvmH5AsXPQoBbPxjWbIL1Cv-nCRNN46AK12l6Z3p9eoKv4TfAy339nGSyfCTiu7odvc6J5rScMXz-txzvtFhZhdZ05YR4z3Ov39hpQGGQWWeAIzZkLoiH41o6nPerHnsAFyxZX_-DgP4OA4jjRW0fvsrDga3iE8vBL7iW_8"/>
-</div>
-<nav class="fixed top-0 left-0 right-0 z-50 h-16 flex items-center justify-between px-8 bg-gradient-to-b from-white/80 to-transparent">
-<div class="flex items-center gap-3">
-<span class="material-symbols-outlined text-electric-blue text-3xl drop-shadow-[0_0_8px_rgba(0,176,255,0.4)]">headphones</span>
-<span class="text-text-primary font-bold text-lg tracking-wide uppercase">LofiLoom<span class="text-electric-blue text-xs align-top ml-1">v2</span></span>
-</div>
-<div class="flex items-center gap-6">
-<div class="hidden md:flex items-center gap-2 text-text-secondary text-xs font-medium bg-white/40 px-4 py-2 rounded-sm border border-white/60 backdrop-blur-md shadow-sm">
-<span class="material-symbols-outlined text-electric-blue text-base">timer</span>
-<span class="tracking-tight">SESSION: 00:45:00</span>
-</div>
+<body class="bg-forest-dark text-moss-light min-h-screen flex flex-col font-mono antialiased overflow-hidden selection:bg-moss-grey/30 selection:text-white">
+<header class="fixed top-0 left-0 w-full z-50 p-8 flex justify-between items-center opacity-60 hover:opacity-100 transition-opacity duration-500">
 <div class="flex items-center gap-3 cursor-pointer group">
-<div class="size-8 rounded-sm border border-white/50 overflow-hidden shadow-sm">
-<img alt="User profile avatar" class="w-full h-full object-cover grayscale opacity-90 group-hover:grayscale-0 group-hover:opacity-100 transition-all" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQExQBHfWJqTQgtxDg2jHHFqdQhpS992LP-o2S3u9Z-3gS-m05hQvpb28jY8FnEf3PeALZ7XOux9z27smmCzkIPSj72mt9EcSUO-g7_b3aQZJzii4r5mEfs5Tzk_D1tX8s0LguImvMASmKxY9_1UWEwNvSj9bSh4IzObX06QYh9XzyIQaMol6jiu0QypYdWk-vMsu0V4OhozVkD3qIOWgtF2BUoo9k_LUCpN16uZpqjZkNqbKj1n1nZolEm9nGzcxZejHnxWz2sB4"/>
+<span class="material-symbols-outlined text-sm text-moss-grey group-hover:text-white transition-colors">forest</span>
+<span class="text-xs font-medium tracking-widest uppercase text-moss-grey group-hover:text-white transition-colors">Nightstand_Mono</span>
 </div>
+<div class="cursor-pointer group">
+<span class="material-symbols-outlined text-xl text-moss-grey group-hover:text-white transition-colors">terminal</span>
 </div>
+</header>
+<main class="relative flex flex-col w-full h-screen">
+<section class="relative z-10 flex-1 flex flex-col items-center justify-end pb-16 w-full bg-forest-dark">
+<div class="absolute inset-0 bg-gradient-to-b from-transparent to-forest-dark z-0 pointer-events-none"></div>
+<div class="relative z-10 text-center px-6 max-w-4xl mx-auto space-y-4">
+<div class="w-px h-16 bg-gradient-to-b from-transparent via-moss-dim to-transparent mx-auto mb-6 opacity-50"></div>
+<h1 class="text-2xl md:text-3xl lg:text-4xl font-normal text-moss-light tracking-tight leading-snug">
+                    &gt; What is keeping you awake?
+                </h1>
+<p class="text-moss-dim text-xs md:text-sm font-light tracking-widest uppercase opacity-80">
+                    // Log entry pending...
+                </p>
 </div>
-</nav>
-<div class="relative z-20 h-full w-full flex flex-col justify-between pt-16 pb-32 px-8">
-<div class="flex-1 flex w-full">
-<div class="hidden lg:block lg:w-2/3"></div>
-<div class="w-full lg:w-1/3 flex flex-col items-center justify-center lg:items-end lg:justify-start lg:pt-12">
-<div class="glass-panel rounded-lg p-8 w-full max-w-md flex flex-col items-center relative overflow-hidden transition-all hover:border-white hover:shadow-lg">
-<div class="relative size-64 flex items-center justify-center mb-8">
-<div class="absolute inset-0 rounded-full border border-slate-300/30"></div>
-<svg class="absolute inset-0 size-full -rotate-90 transform glow-ring rounded-full" viewBox="0 0 256 256">
-<circle cx="128" cy="128" fill="none" r="116" stroke="#CFD8DC" stroke-width="1"></circle>
-<circle class="drop-shadow-[0_0_5px_rgba(0,176,255,0.4)]" cx="128" cy="128" fill="none" r="116" stroke="#00B0FF" stroke-dasharray="728" stroke-dashoffset="182" stroke-linecap="round" stroke-width="2"></circle>
-</svg>
-<div class="flex flex-col items-center z-10">
-<span class="text-7xl font-light text-text-primary tracking-tighter tabular-nums drop-shadow-sm" style="font-feature-settings: 'tnum' on, 'lnum' on;">25:00</span>
-<span class="text-electric-blue text-[10px] uppercase tracking-[0.3em] mt-2 font-bold bg-electric-blue/10 px-2 py-0.5 rounded-sm">Focus_Mode</span>
+</section>
+<div class="w-full h-32 -my-16 z-20 pointer-events-none bg-gradient-to-b from-forest-dark via-forest-dark/90 to-transparent"></div>
+<section class="relative z-0 flex-[1.5] w-full bg-gradient-to-b from-[#0c1210] to-[#050807] flex flex-col items-center pt-12">
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-2/3 h-40 bg-emerald-900/5 blur-[100px] rounded-full pointer-events-none"></div>
+<div class="w-full max-w-3xl px-6 md:px-12 h-full pb-20 relative">
+<textarea autofocus="" class="liquid-input w-full h-full text-lg md:text-xl lg:text-2xl font-light text-moss-light placeholder:text-moss-dim resize-none text-center leading-relaxed caret-moss-grey focus:ring-0 p-0 m-0 no-scrollbar bg-transparent" placeholder="Start typing to ground your thoughts..." spellcheck="false"></textarea>
+<div class="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-t from-[#050807] to-transparent pointer-events-none"></div>
 </div>
+<div class="absolute bottom-10 text-center w-full opacity-30 hover:opacity-70 transition-opacity duration-500 pointer-events-none">
+<div class="text-[10px] uppercase tracking-[0.2em] font-medium text-moss-dim font-mono">
+                    [Press <span class="text-moss-grey">Enter</span> to Archive]
+                </div>
 </div>
-<div class="flex items-center gap-6 w-full justify-center">
-<button class="text-silver-accent hover:text-electric-blue transition-colors p-2 rounded-full hover:bg-electric-blue/5">
-<span class="material-symbols-outlined text-2xl">replay</span>
-</button>
-<button class="h-14 w-14 rounded-full bg-electric-blue text-white flex items-center justify-center shadow-[0_4px_15px_rgba(0,176,255,0.3)] hover:scale-105 hover:bg-sky-500 active:scale-95 transition-all">
-<span class="material-symbols-outlined text-3xl filled" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
-</button>
-<button class="text-silver-accent hover:text-electric-blue transition-colors p-2 rounded-full hover:bg-electric-blue/5">
-<span class="material-symbols-outlined text-2xl">stop</span>
-</button>
-</div>
-<div class="flex bg-slate-200/50 rounded-sm p-1 mt-8 w-full border border-white/50">
-<button class="flex-1 py-2 text-xs font-bold text-electric-blue bg-white shadow-sm rounded-sm border border-slate-100">FOCUS</button>
-<button class="flex-1 py-2 text-xs font-medium text-text-secondary hover:text-text-primary hover:bg-white/50 transition-colors rounded-sm">SHORT</button>
-<button class="flex-1 py-2 text-xs font-medium text-text-secondary hover:text-text-primary hover:bg-white/50 transition-colors rounded-sm">LONG</button>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="fixed bottom-0 left-0 right-0 z-40 glass-panel-deep px-8 py-6 flex flex-col md:flex-row items-center justify-between gap-8 h-auto md:h-28 shadow-xl border-t border-white/80">
-<div class="hidden md:flex items-center gap-4 w-64 shrink-0">
-<div class="relative size-14 rounded-sm overflow-hidden bg-white/60 shadow-sm group cursor-pointer border border-slate-200">
-<img alt="Album art" class="object-cover w-full h-full opacity-90 group-hover:opacity-100 transition-opacity grayscale-[20%]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9gvKgX5ZCwKa8RJBtFhlK4uG6GSCPyTKZy9LWI01zOZpSAz-ShnRB34fDaXCy7NPOz9ZTFR59o-Xb_OPmXcCgtFFWJnzBEUhHB9gH9pMLdwIW0vrS6ZWiF8LvYqUuNspbWEA1as9TSNevPgf7ksWxpmhISsBiox0EkYzlbPAsbf0BTep91I8quRuuTfeGZorrCdwzBvBOR5mqQMByXaj_Zjh_SXPKR6azHG5dckqYPE4ZmBgoS4wJE5JmTs_6fSYqS8s05eBJ3FA"/>
-<div class="absolute inset-0 flex items-center justify-center bg-white/40 opacity-0 group-hover:opacity-100 transition-opacity backdrop-blur-[1px]">
-<span class="material-symbols-outlined text-text-primary text-xl">open_in_full</span>
-</div>
-</div>
-<div class="flex flex-col">
-<h3 class="text-text-primary text-sm font-bold leading-tight uppercase tracking-tight">Rainy Night Cafe</h3>
-<p class="text-[10px] text-electric-blue mt-1 uppercase tracking-wide font-medium">Ambient Flow</p>
-</div>
-</div>
-<div class="flex-1 w-full flex items-center justify-center gap-4 md:gap-8 overflow-x-auto pb-2 md:pb-0 px-4 scrollbar-hide">
-<div class="flex flex-col items-center gap-2 min-w-[80px] group">
-<div class="flex items-center gap-2 mb-1 opacity-70 group-hover:opacity-100 transition-opacity">
-<span class="material-symbols-outlined text-lg text-blue-400">water_drop</span>
-<span class="text-[10px] uppercase tracking-wider font-bold text-text-secondary group-hover:text-blue-500">Rain</span>
-</div>
-<input class="w-32 h-1 bg-slate-200 rounded-none appearance-none cursor-pointer accent-blue-500 hover:bg-slate-300 transition-colors" max="100" min="0" type="range" value="75"/>
-</div>
-<div class="flex flex-col items-center gap-2 min-w-[80px] group">
-<div class="flex items-center gap-2 mb-1 opacity-70 group-hover:opacity-100 transition-opacity">
-<span class="material-symbols-outlined text-lg text-orange-400">storefront</span>
-<span class="text-[10px] uppercase tracking-wider font-bold text-text-secondary group-hover:text-orange-500">Cafe</span>
-</div>
-<input class="w-32 h-1 bg-slate-200 rounded-none appearance-none cursor-pointer accent-orange-500 hover:bg-slate-300 transition-colors" max="100" min="0" type="range" value="30"/>
-</div>
-<div class="flex flex-col items-center gap-2 min-w-[80px] group">
-<div class="flex items-center gap-2 mb-1 opacity-70 group-hover:opacity-100 transition-opacity">
-<span class="material-symbols-outlined text-lg text-red-400">local_fire_department</span>
-<span class="text-[10px] uppercase tracking-wider font-bold text-text-secondary group-hover:text-red-500">Fire</span>
-</div>
-<input class="w-32 h-1 bg-slate-200 rounded-none appearance-none cursor-pointer accent-red-500 hover:bg-slate-300 transition-colors" max="100" min="0" type="range" value="15"/>
-</div>
-<div class="flex flex-col items-center gap-2 min-w-[80px] group">
-<div class="flex items-center gap-2 mb-1 opacity-70 group-hover:opacity-100 transition-opacity">
-<span class="material-symbols-outlined text-lg text-amber-400">album</span>
-<span class="text-[10px] uppercase tracking-wider font-bold text-text-secondary group-hover:text-amber-500">Vinyl</span>
-</div>
-<input class="w-32 h-1 bg-slate-200 rounded-none appearance-none cursor-pointer accent-amber-500 hover:bg-slate-300 transition-colors" max="100" min="0" type="range" value="45"/>
-</div>
-<div class="flex flex-col items-center gap-2 min-w-[80px] group">
-<div class="flex items-center gap-2 mb-1 opacity-70 group-hover:opacity-100 transition-opacity">
-<span class="material-symbols-outlined text-lg text-green-400">flutter_dash</span>
-<span class="text-[10px] uppercase tracking-wider font-bold text-text-secondary group-hover:text-green-500">Nature</span>
-</div>
-<input class="w-32 h-1 bg-slate-200 rounded-none appearance-none cursor-pointer accent-green-500 hover:bg-slate-300 transition-colors" max="100" min="0" type="range" value="0"/>
-</div>
-</div>
-<div class="flex items-center gap-4 w-64 justify-end shrink-0 border-l border-slate-300 pl-6 h-12">
-<button class="text-silver-accent hover:text-text-primary transition-colors">
-<span class="material-symbols-outlined">tune</span>
-</button>
-<div class="flex items-center gap-2 group">
-<span class="material-symbols-outlined text-silver-accent group-hover:text-text-primary text-xl">volume_up</span>
-<input class="w-20 h-1 bg-slate-200 rounded-none appearance-none cursor-pointer accent-text-primary" max="100" min="0" type="range" value="80"/>
-</div>
-<button class="text-silver-accent hover:text-text-primary transition-colors ml-2">
-<span class="material-symbols-outlined">fullscreen</span>
-</button>
-</div>
-</div>
+</section>
+</main>
+<div class="fixed inset-0 pointer-events-none opacity-[0.04] z-[60] mix-blend-overlay" style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.8%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E');"></div>
+<div class="fixed inset-0 pointer-events-none z-[59] opacity-[0.02]" style="background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06)); background-size: 100% 2px, 3px 100%;"></div>
 
 </body></html>

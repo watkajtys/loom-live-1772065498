@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Nightstand - Warm Ember</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;1,300&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "ember-dark": "#0F0A0A", 
+                        "ember-base": "#1A1210",
+                        "ember-light": "#2C1E1A", 
+                        "amber-text": "#E8C8A0",
+                        "amber-dim": "#A68A6D",
+                        "warm-black": "#080505",
+                    },
+                    fontFamily: {
+                        "humanist": ["Open Sans", "sans-serif"],
+                    },
+                    backgroundImage: {
+                        'ember-gradient': 'linear-gradient(to bottom, #1A1210 0%, #0F0A0A 100%)',
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        :root {
+            --horizon-top: #1A1210;
+            --horizon-bottom: #2C1E1A;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .liquid-input {
+            background: transparent;
+            outline: none;
+            border: none;
+            box-shadow: none;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+        }
+        .liquid-input::placeholder {
+            color: rgba(166, 138, 109, 0.2);
+            font-style: italic;
+        }
+    </style>
+</head>
+<body class="bg-warm-black text-amber-text min-h-screen flex flex-col font-humanist antialiased overflow-hidden selection:bg-orange-900/40 selection:text-amber-100">
+<header class="fixed top-0 left-0 w-full z-50 p-8 flex justify-between items-center opacity-40 hover:opacity-100 transition-opacity duration-500 text-amber-dim">
+<div class="flex items-center gap-2 cursor-pointer hover:text-amber-text transition-colors">
+<span class="material-symbols-outlined text-sm tracking-widest uppercase">nightlight</span>
+<span class="text-xs font-semibold tracking-[0.2em] uppercase">Nightstand</span>
+</div>
+<div class="cursor-pointer hover:text-amber-text transition-colors">
+<span class="material-symbols-outlined text-xl">history</span>
+</div>
+</header>
+<main class="relative flex flex-col w-full h-screen">
+<section class="relative z-10 flex-1 flex flex-col items-center justify-end pb-12 w-full bg-[#1A1210]">
+<div class="absolute inset-0 bg-gradient-to-b from-transparent via-[#1A1210]/50 to-[#1A1210] z-0 pointer-events-none"></div>
+<div class="relative z-10 text-center px-6 max-w-4xl mx-auto space-y-4">
+<h1 class="text-3xl md:text-4xl lg:text-5xl font-humanist font-light text-amber-text tracking-wide leading-tight opacity-90 drop-shadow-md">
+                    What is keeping you awake?
+                </h1>
+<p class="text-amber-dim text-sm md:text-base font-normal tracking-wider opacity-70">
+                    Let the warmth hold it for now.
+                </p>
+</div>
+</section>
+<div class="w-full h-32 -my-16 z-20 pointer-events-none bg-gradient-to-b from-[#1A1210] via-[#120D0C] to-transparent"></div>
+<section class="relative z-0 flex-[1.5] w-full bg-gradient-to-b from-[#160e0d] to-[#0F0A0A] flex flex-col items-center pt-8">
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-40 bg-orange-900/10 blur-[100px] rounded-full pointer-events-none"></div>
+<div class="w-full max-w-3xl px-6 md:px-12 h-full pb-20 relative">
+<textarea autofocus="" class="liquid-input w-full h-full text-2xl md:text-3xl lg:text-4xl font-humanist font-light text-amber-100/90 placeholder:text-amber-900/30 resize-none text-center leading-relaxed caret-amber-700 focus:ring-0 p-0 m-0 no-scrollbar bg-transparent" placeholder="Type your burden..." spellcheck="false"></textarea>
+<div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-[#0F0A0A] to-transparent pointer-events-none"></div>
+</div>
+<div class="absolute bottom-8 text-center w-full opacity-30 hover:opacity-60 transition-opacity duration-500 pointer-events-none">
+<div class="text-[10px] uppercase tracking-[0.3em] font-semibold text-amber-900/80">
+                    Press <span class="font-bold text-amber-800">Enter</span> to rest
+                </div>
+</div>
+</section>
+</main>
+<div class="fixed inset-0 pointer-events-none opacity-[0.05] z-[60] mix-blend-overlay" style="background-image: url('data:image/svg+xml,%3Csvg viewBox=%220 0 200 200%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cfilter id=%22noiseFilter%22%3E%3CfeTurbulence type=%22fractalNoise%22 baseFrequency=%220.8%22 numOctaves=%223%22 stitchTiles=%22stitch%22/%3E%3C/filter%3E%3Crect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23noiseFilter)%22/%3E%3C/svg%3E');"></div>
+
+</body></html>
