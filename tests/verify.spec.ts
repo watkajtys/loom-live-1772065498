@@ -1,29 +1,61 @@
 import { test, expect } from '@playwright/test';
 
-test('Nightstand flow verification', async ({ page }) => {
-  // 1. The user is lying in bed at 11:45 PM... (Context setup, we just go to the page)
-  await page.goto('/rest');
+test.describe('Nightstand App', () => {
 
-  // Verify initial state
-  await expect(page.getByText('What is keeping you awake?')).toBeVisible();
-  
-  // 3. In the single input field, the user types...
-  const input = page.getByPlaceholder('Type your burden here...');
-  await expect(input).toBeVisible();
-  await input.fill('Send the Q3 projection PDF to Sarah first thing, and apologize for the delay.');
+  test('User Flow: Type thought and rest', async ({ page }) => {
+    await page.goto('/rest');
 
-  // 4. The user taps the "Rest" action.
-  // We can press Enter or click the text. Let's click the text to be explicit about "tapping".
-  await page.getByText('Press Enter to rest').click();
+    // Wait for initial animation to complete
+    await page.waitForTimeout(2000); 
 
-  // 5. The text visually seals itself away into the drawer...
-  // Verify the input is no longer visible (or fading out) and success message appears.
-  // We wait for the success message.
-  await expect(page.getByText('Your thought is secure. Rest now.')).toBeVisible({ timeout: 10000 });
-  await expect(input).not.toBeVisible();
+    // Verify key elements are visible with high contrast
+    const heading = page.getByText('What is keeping you awake?');
+    await expect(heading).toBeVisible();
+    
+    // Check input visibility using data-testid
+    const input = page.getByTestId('thought-input');
+    await expect(input).toBeVisible();
+    await expect(input).toHaveAttribute('placeholder', 'Type your burden here...');
 
-  // 6. Relieved... 7. At 9:00 AM... (We stop here as per instructions for visual verification)
+    // Take screenshot of initial state to verify visibility
+    await page.screenshot({ path: 'initial_state.png' });
 
-  // Capture screenshot
-  await page.screenshot({ path: 'evidence.png' });
+    // Type thought
+    await input.fill('Send the Q3 projection PDF to Sarah first thing, and apologize for the delay.');
+
+    // Click rest button
+    const restButton = page.getByTestId('rest-button');
+    await expect(restButton).toBeVisible();
+    await restButton.click();
+
+    // Verify success state appears
+    const successMessage = page.getByTestId('success-message');
+    await expect(successMessage).toBeVisible({ timeout: 10000 });
+    
+    // Wait for success animation to settle
+    await page.waitForTimeout(2000);
+    
+    // Verify input is gone
+    await expect(input).not.toBeVisible();
+
+    await page.screenshot({ path: 'evidence.png' });
+  });
+
+  test('Deep Link: Load with rested state', async ({ page }) => {
+    // Test deep linking capability
+    await page.goto('/rest?state=rested');
+    
+    // Wait for animation
+    await page.waitForTimeout(2000);
+
+    // Verify success message is visible immediately
+    const successMessage = page.getByTestId('success-message');
+    await expect(successMessage).toBeVisible();
+    
+    // Verify input is NOT visible
+    const input = page.getByTestId('thought-input');
+    await expect(input).not.toBeVisible();
+    
+    await page.screenshot({ path: 'deep_link_state.png' });
+  });
 });

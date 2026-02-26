@@ -117,3 +117,7 @@ body {
   background-color: var(--color-deep-void);
   @apply text-slate-300 h-screen overflow-hidden flex flex-row selection:bg-cyber-cyan selection:text-black;
 }
+
+#root {
+  @apply w-full h-full;
+}
